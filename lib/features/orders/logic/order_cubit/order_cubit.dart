@@ -2,6 +2,7 @@ import 'package:ahwa_manager_app/core/models/order_model.dart';
 import 'package:ahwa_manager_app/features/orders/logic/order_repos/order_repo.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 part 'order_state.dart';
 
@@ -30,7 +31,7 @@ class OrderCubit extends Cubit<OrderState> {
         customerName: customerController.text,
         drinkId: dropdownValue!,
         specialInstructions: spacialInstructionsController.text,
-        createdAt: DateTime.now().toIso8601String(),
+        createdAt:DateFormat('d MMMM yyyy').format(DateTime.now()).toString(),
       ),
     );
     emit(OrderSuccess());
