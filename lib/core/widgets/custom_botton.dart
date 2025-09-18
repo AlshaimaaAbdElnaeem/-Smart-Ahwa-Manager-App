@@ -7,6 +7,7 @@ final void Function()?  onPressed;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
+      minWidth: double.infinity,
     color: Colors.deepOrangeAccent,
     onPressed: onPressed,
     padding: EdgeInsets.all(20),

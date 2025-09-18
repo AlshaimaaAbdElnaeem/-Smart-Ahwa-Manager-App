@@ -1,12 +1,12 @@
 enum OrderStatus { pending, completed }
 
 class OrderModel {
-   String? id;
+   int? id;
   final String customerName;
   final String drinkId;
   final String specialInstructions;
-  final DateTime createdAt;
-  OrderStatus status;
+  final String createdAt;
+  String status;
 
   OrderModel({
      this.id,
@@ -14,7 +14,7 @@ class OrderModel {
     required this.drinkId,
     required this.specialInstructions,
     required this.createdAt,
-    this.status = OrderStatus.pending,
+    this.status = "pending",
   });
   toMap() {
     return {

@@ -22,5 +22,23 @@ try {
     }
     
   }
+  
+  @override
+  Future<void> deleteOrder(int id) async{
+    try {
+      await SqlHelper().delete(id);
+    } catch (e) {
+      print(e);
+    }
+  }
+  
+  @override
+  Future<void> updateOrder(OrderModel order) async{
+   try {
+     await SqlHelper().update(order);
+   } catch (e) {
+     print(e);
+   }
+  }
 
 }
