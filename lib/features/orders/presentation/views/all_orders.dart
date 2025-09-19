@@ -17,7 +17,6 @@ class AllOrders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<OrderCubit>().getOrders();
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(
@@ -28,11 +27,15 @@ class AllOrders extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.deepOrangeAccent,
         child: const Icon(Icons.add, color: Colors.white, size: 30),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddOrder()),
-          );
+        onPressed: () async{
+        
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const AddOrder()),
+    );
+    // بعد العودة من AddOrder، جلب البيانات مرة أخرى
+    context.read<OrderCubit>().getOrders();
+
         },
       ),
       body: BlocBuilder<OrderCubit, OrderState>(
@@ -46,9 +49,9 @@ class AllOrders extends StatelessWidget {
                 if (!snapshot.hasData) {
                   return const Center(child: CircularProgressIndicator());
                 }
-
+    
                 final dailyReport = snapshot.data!;
-
+    
                 return Column(
                   children: [
                     DisplayDailyReport(dailyReport: dailyReport),

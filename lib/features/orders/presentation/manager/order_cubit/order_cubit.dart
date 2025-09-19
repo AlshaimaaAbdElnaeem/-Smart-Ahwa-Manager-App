@@ -8,24 +8,15 @@ class OrderCubit extends Cubit<OrderState> {
   OrderCubit(this.orderRepo) : super(OrderInitial());
   final OrderRepo orderRepo;
 
-  List<String> drinksList = [
-    "choose a drink",
-    "Shai",
-    "Turkish Coffee",
-    "Hibiscus Tea",
-    "Espresso",
-  ];
-  String? dropdownValue;
-  void changeDrink(String? value) {
-    dropdownValue = value;
-    emit(OrderDrinkChanged());
-  }
+
+
 
   Future<void> addOrder(OrderModel order) async {
     emit(OrderLoading());
     await orderRepo.addOrder(
        order 
     );
+    await getOrders();
     emit(OrderSuccess());
   }
 
