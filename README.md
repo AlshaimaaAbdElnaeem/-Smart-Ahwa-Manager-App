@@ -9,7 +9,7 @@ A Flutter application designed to help a traditional Cairo **ahwa owner** stream
 This project is part of my portfolio where I **showcase my work** as a Flutter developer.  
 It demonstrates how I apply:  
 - **State management with Cubit (Bloc)**  
-- **SOLID principles** (Single Responsibility, Open/Closed, Dependency Inversion)  
+- **SOLID principles** (Single Responsibility, Open/Closed, Liskov Substitution Principle, Interface Segregation Principle, Dependency Inversion)  
 - **Core OOP concepts** (encapsulation, polymorphism, inheritance)  
 - **Clean code structure** (separating Repo, Service, Cubit, UI)  
 
