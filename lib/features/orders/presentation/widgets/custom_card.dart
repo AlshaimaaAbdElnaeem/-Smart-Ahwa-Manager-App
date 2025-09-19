@@ -2,7 +2,7 @@ import 'package:ahwa_manager_app/core/models/order_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../logic/order_cubit/order_cubit.dart' show OrderCubit;
+import '../manager/order_cubit/order_cubit.dart' show OrderCubit;
 
 class CustomCard extends StatelessWidget {
   const CustomCard({super.key, required this.order});
@@ -29,19 +29,19 @@ class CustomCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-               Text(
-                  order.createdAt,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
+            Text(
+              order.createdAt,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  order.customerName,
+                  "drink: ${order.drinkId}",
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -73,7 +73,6 @@ class CustomCard extends StatelessWidget {
                     backgroundColor: order.status == 'Completed'
                         ? Colors.green
                         : Colors.redAccent,
-
                   ),
                 ),
               ],
@@ -81,18 +80,29 @@ class CustomCard extends StatelessWidget {
             const SizedBox(height: 8),
             // Drink type
             Text(
-              "Drink: ${order.drinkId}",
+              order.customerName,
               style: const TextStyle(fontSize: 16, color: Colors.white),
             ),
             const SizedBox(height: 6),
             // Special instructions
-            Text(
-              "Instructions: ${order.specialInstructions}",
-              style: const TextStyle(
-                fontSize: 14,
-                fontStyle: FontStyle.italic,
-                color: Colors.white70,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Instructions: ${order.specialInstructions}",
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white70,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    cubit.deleteOrder(order.id!);
+                  },
+                  icon: const Icon(Icons.delete, color: Colors.white),
+                ),
+              ],
             ),
           ],
         ),

@@ -1,4 +1,4 @@
-import 'package:ahwa_manager_app/features/orders/logic/order_cubit/order_cubit.dart';
+import 'package:ahwa_manager_app/features/orders/presentation/manager/order_cubit/order_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

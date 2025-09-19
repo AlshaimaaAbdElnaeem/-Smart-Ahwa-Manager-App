@@ -1,5 +1,5 @@
 import 'package:ahwa_manager_app/core/helpers/sql_helper.dart';
-import 'package:ahwa_manager_app/features/orders/logic/order_cubit/order_cubit.dart';
+import 'package:ahwa_manager_app/features/orders/presentation/manager/order_cubit/order_cubit.dart';
 import 'package:ahwa_manager_app/features/orders/logic/order_repos/order_repo_implementation.dart';
 import 'package:ahwa_manager_app/features/orders/presentation/views/all_orders.dart';
 import 'package:flutter/material.dart';
