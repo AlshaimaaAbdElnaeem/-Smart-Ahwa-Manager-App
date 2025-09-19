@@ -34,6 +34,45 @@ It demonstrates how I apply:
 - **Flutter** (3.x)  
 - **Dart**  
 - **Cubit** for state management  
-- **Repository pattern** for data access  
-- Local storage ( Sqflite)
+- **Repository pattern** for data access
 
+
+---
+## 🎬 Demo Video  
+
+Check out the demo of the application in action:  
+
+![Demo Video](https://user-images.githubusercontent.com/your-username/demo-video.gif) 
+
+---
+## 📂 Project Structure  
+
+lib/
+├── core/ # Helpers, widgets, constants
+├── features/
+│ └── orders/
+│ ├── logic/
+│ │ ├── model/
+│ │ └── order_repos/
+│ └── presentation/
+│ ├── manager/ 
+| | ├── order_cubit/ 
+| ├── views/
+│ └── widgets/
+│ └── main.dart
+
+---
+## ✨ Features & Screenshots  
+
+### 1. Add Customer Order  
+![Add Order Screen](assets/demo/addorder.png)  
+
+### 2. Orders Dashboard & Daily Report 
+![Orders Dashboard](assets/demo/report&orders.png)  
+
+
+
+
+- Local storage (**Sqflite**)  
+
+---
